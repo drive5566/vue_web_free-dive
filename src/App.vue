@@ -1,18 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <MyHeader/>
+    <router-view></router-view>
+    <!-- 在home、search顯示的，在登陸、註冊隱藏 -->
+    <MyFooter v-show="this.$route.meta.show"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyHeader from './components/Header/Index.vue'
+import MyFooter from './components/Footer/Index'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MyHeader,
+    MyFooter,
+  },
+  mounted(){
+
+    this.$store.dispatch("categoryList");
   }
+
 }
 </script>
 
@@ -25,4 +35,12 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+
+
 </style>
