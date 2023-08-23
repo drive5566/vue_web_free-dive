@@ -10,3 +10,5 @@ export const reqGetBannerList = ()=>mockrequests('/banner')
 export const reqGetFloorList = ()=>mockrequests('/floor')
     // 這個接口，給服務器傳送一個默認參數(至少是個空對象)
 export const reqGetSearchInfo = (params)=>requests({url:'/list',method:'post',data:params})
+
+export const reqGoodsInfo = (skuid)=>requests({url:`/item/${skuid}`,method:'get'})

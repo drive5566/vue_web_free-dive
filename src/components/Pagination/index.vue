@@ -1,18 +1,29 @@
 <template>
   <div class="pagination">
     <button :disabled="pageNo == 1" @click="$emit('getPageNo',pageNo-1)">上一頁</button>
-    <button v-show="startNumberAndEndNum.start > 1">1</button>
+    <button v-show="startNumberAndEndNum.start > 1" 
+        @click="$emit('getPageNo',1)"
+         :class="{active:pageNo == 1}">1</button>
+
     <button v-show="startNumberAndEndNum.start > 2">...</button>
 
-    <button v-for="page,index in startNumberAndEndNum.end" :key="index" v-show="page >= startNumberAndEndNum.start">{{ page }}</button>
+    <button v-for="page,index in startNumberAndEndNum.end" :key="index" 
+    v-show="page >= startNumberAndEndNum.start" 
+    @click="$emit('getPageNo',page)" 
+    :class="{active:pageNo == page}">{{ page }}</button>
 
 
     <button v-show="startNumberAndEndNum.end < totalPage - 1">...</button>
-    <button v-show="startNumberAndEndNum.end < totalPage">{{ totalPage }}</button>
-    <button>下一頁</button>
+
+    <button v-show="startNumberAndEndNum.end < totalPage" 
+    @click="$emit('getPageNo',totalPage)" 
+    :class="{active:pageNo == totalPage}">{{ totalPage }}</button>
+
+    <button @click="$emit('getPageNo',pageNo + 1)" 
+    :disabled="pageNo == totalPage">下一頁</button>
 
     <button style="margin-left: 30px;">共{{total}}條</button>
-    {{ startNumberAndEndNum }}
+
   </div>
 </template>
 
@@ -50,7 +61,9 @@ computed:{
 }
 </script>
 
-<style>
+<style  scoped>
+
+
 .pagination{
   display: flex;  
   gap: 10px;
@@ -63,5 +76,9 @@ button{
     padding: 3px 10px;
     background-color: rgb(197, 197, 197,.5);
     cursor: pointer;
+}
+
+.active{
+    background-color: skyblue;
 }
 </style>

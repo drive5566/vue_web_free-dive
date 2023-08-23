@@ -75,9 +75,10 @@
               <li class="yui3-u-1-5" v-for="good in goodsList" :key="good.id">
                 <div class="list-wrap">
                   <div class="p-img">
-                    <a href="item.html">
+                    <router-link :to="`/Detail/${good.id}`">
                       <img :src="good.defaultImg" alt="" />
-                    </a>
+                    </router-link>
+                    
                   </div>
                   <div class="price">
                     <strong>
@@ -230,7 +231,8 @@ export default {
     },
 
     getPageNo(pageNo){
-      console.log(pageNo);
+      this.searchParams.pageNo = pageNo
+      this.getData()
     }
   },
   // 監聽實例身上屬性變化
