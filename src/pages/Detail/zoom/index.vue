@@ -17,13 +17,22 @@ computed:{
     imgObj(){
         return this.skuImageList[0] || {}
        
-    } 
+    },
 },
+mounted(){
+    this.$bus.$on('imgIndex',(index)=>{
+        // this.skuImageList.index = index
+        console.log(index);
+    })
+
+}
 
 }
 </script>
 
-<style>
+<style scoped>
+
+
 img{
     width: 400px;
 }
@@ -34,5 +43,6 @@ img{
     top: 250px;
     transform: scale(1.5);
     z-index: 99;
+    display:none
 }
 </style>

@@ -55,33 +55,16 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="price-area2">
+                    <div class="price-area2" v-for="spuSaleAttr in spuSaleAttrList" :key="spuSaleAttr.id">
                         <div class="title">
-                            <i>顏&emsp;色</i>
+                            <i>{{ spuSaleAttr.saleAttrName }}</i>
                         </div>
-                        <ul class="content-select">
-                            <li class="active">金色</li>
-                            <li>銀色</li>
-                        </ul>
-                    </div>
-
-                    <div class="price-area2">
-                        <div class="title">
-                            <i>儲存容量</i>
-                        </div>
-                        <ul class="content-select">
-                            <li class="active">16G</li>
-                            <li>64G</li>
-                        </ul>
-                    </div>
-
-                    <div class="price-area2">
-                        <div class="title">
-                            <i>購買方式</i>
-                        </div>
-                        <ul class="content-select">
-                            <li class="active">信用卡</li>
-                            <li>店家自取</li>
+                        <ul class="content-select" >
+                            <li :class="{active:spuSaleAttrValue.isChecked == 1}" 
+                            v-for="spuSaleAttrValue in spuSaleAttr.spuSaleAttrValueList" :key="spuSaleAttrValue.id" 
+                            @click="changeActive(spuSaleAttrValue,spuSaleAttr.spuSaleAttrValueList)"> 
+                            {{ spuSaleAttrValue.saleAttrValueName }}</li>
+                         
                         </ul>
                     </div>
 
@@ -125,7 +108,7 @@ mounted(){
     
 },
 computed:{
-    ...mapGetters(['categoryView','skuInfo']),
+    ...mapGetters(['categoryView','skuInfo','spuSaleAttrList']),
     skuImageList(){
         return this.skuInfo.skuImageList || [];
     }
@@ -139,9 +122,14 @@ methods:{
         if(this.shop <= 0 ){
             this.shop = 1
         }
-
+    },
+    changeActive(saleAttrValue,arr){
+        arr.forEach(item=>{
+            item.isChecked = 0
+        })
+        saleAttrValue.isChecked = 1
+        }
     }
-}
 }
 </script>
 
@@ -258,6 +246,10 @@ input{
 
 .preview-wrap{
     width: 40%;
+}
+
+.price-area2 input{
+    text-align: center;
 }
 </style>>
 

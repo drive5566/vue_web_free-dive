@@ -283,10 +283,12 @@ export default {
 }
 .swiper-slide img {
   width: 700px;
-  height: 455px;
+
 }
 
 .swiper-container {
   --swiper-theme-color: #fff;
+  width: 700px;
+  height: 455px;
 }
 </style>
