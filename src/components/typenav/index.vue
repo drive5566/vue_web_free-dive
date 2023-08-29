@@ -278,7 +278,7 @@ nav {
   padding: 12px 5px;
   padding-bottom: 13px;
   overflow: hidden;
-  z-index: 99;
+  z-index: 999;
   position: relative;
 }
 /* 過度動畫樣式 */

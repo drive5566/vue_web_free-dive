@@ -69,13 +69,13 @@
                     </div>
 
                     <div class="price-area2">
-                        <input type="text"  v-model="shop">
+                        <input type="text"  v-model="shop" @change="changeNum">
                         <div class="select-quantity">
                             <button @click="incrementShop" >+</button>
                             <button @click="reduceShop">-</button>
 
                         </div>    
-                        <button class="shop-car">加入購物車</button>
+                        <button class="shop-car" @click="addShopCar">加入購物車</button>
                     </div>
 
                     
@@ -128,7 +128,22 @@ methods:{
             item.isChecked = 0
         })
         saleAttrValue.isChecked = 1
+        },
+        changeNum(e){
+            let value = e.target.value * 1
+            if(isNaN(value) || value < 1 ){
+                this.shop = 1
+            }else{
+                this.shop = parseInt(value)
+            }
+        },
+    async addShopCar(){
+        try{
+            await this.$store.dispatch('getShopCar',{skuId:this.$route.params.skuid,skuNum:this.shop})
+        }catch(error){
+            alert(error.mssage)
         }
+    }
     }
 }
 </script>

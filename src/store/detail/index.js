@@ -1,6 +1,6 @@
-import {reqGoodsInfo} from '@/api'
+import {reqGoodsInfo,reqAddOrUpDateShopCar} from '@/api'
 const state = {
-    goodInfo:{}
+    goodInfo:{},
 }
 const actions = {
     async getGoodInfo({commit},skuid){
@@ -8,6 +8,15 @@ const actions = {
        if(result.code == 200){
             commit('GETGOODINFO',result.data)
        }
+    },
+    async getShopCar({commit},{skuId,skuNum}){
+        let result = await reqAddOrUpDateShopCar(skuId,skuNum)
+        console.log(commit);
+        if(result.code == 200){
+            return 'ok'
+        }else{
+            return Promise.reject(new Error('faile'))
+        }
     }
 }
 const mutations = {

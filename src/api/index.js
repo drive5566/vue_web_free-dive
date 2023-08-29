@@ -12,3 +12,5 @@ export const reqGetFloorList = ()=>mockrequests('/floor')
 export const reqGetSearchInfo = (params)=>requests({url:'/list',method:'post',data:params})
 
 export const reqGoodsInfo = (skuid)=>requests({url:`/item/${skuid}`,method:'get'})
+// 購物車部分
+export const reqAddOrUpDateShopCar = (skuId,skuNum)=>requests({url:`/cart/addToCart/${skuId}/${skuNum}`,method:'post'})
