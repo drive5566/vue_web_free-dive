@@ -13,7 +13,7 @@ const actions = {
         let result = await reqAddOrUpDateShopCar(skuId,skuNum)
         console.log(commit);
         if(result.code == 200){
-            return 'ok'
+            return 'ok';
         }else{
             return Promise.reject(new Error('faile'))
         }

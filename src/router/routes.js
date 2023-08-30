@@ -6,8 +6,21 @@ import Login from '@/pages/Login'
 import Register from '@/pages/Register'
 import Search from '@/pages/Search'
 import Detail from '@/pages/Detail'
+import AddCarSuccess from '@/pages/AddCarSuccess'
+import ShopCar from '@/pages/ShopCar'
 //路由配置訊息
 export default[
+        {
+            path:'/ShopCar',
+            component:ShopCar,
+            meta:{show:true},
+        },
+        {
+            path:'/AddCarSuccess',
+            component:AddCarSuccess,
+            meta:{show:true},
+            name:'AddCarSuccess',
+        },
     
         {
             path:'/Detail/:skuid?',

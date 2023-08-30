@@ -140,6 +140,8 @@ methods:{
     async addShopCar(){
         try{
             await this.$store.dispatch('getShopCar',{skuId:this.$route.params.skuid,skuNum:this.shop})
+            sessionStorage.setItem('SKUINFO',JSON.stringify(this.skuInfo))
+            this.$router.push({name:'AddCarSuccess',query:{skuNum:this.shop}})
         }catch(error){
             alert(error.mssage)
         }
