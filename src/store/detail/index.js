@@ -1,6 +1,9 @@
 import {reqGoodsInfo,reqAddOrUpDateShopCar} from '@/api'
+import {getUUID} from '@/utils/uuid'
 const state = {
     goodInfo:{},
+    // 遊客臨時身分
+    uuid_token:getUUID()
 }
 const actions = {
     async getGoodInfo({commit},skuid){

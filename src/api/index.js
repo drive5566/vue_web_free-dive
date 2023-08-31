@@ -14,3 +14,6 @@ export const reqGetSearchInfo = (params)=>requests({url:'/list',method:'post',da
 export const reqGoodsInfo = (skuid)=>requests({url:`/item/${skuid}`,method:'get'})
 // 購物車部分
 export const reqAddOrUpDateShopCar = (skuId,skuNum)=>requests({url:`/cart/addToCart/${skuId}/${skuNum}`,method:'post'})
+
+// 購物車列表數據
+export const reqCartList = ()=>requests({url:'/cart/cartList',method:'get'})

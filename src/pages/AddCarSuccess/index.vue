@@ -74,11 +74,13 @@ computed:{
 
 .eight-gocart{
     align-self: flex-end;
+    width: 30%;
     a{
         border:1px solid hsl(0, 0%, 0%,.5);
         background-color: rgb(228, 227, 227,.7);
-        padding: 10px 20px;
+        padding: 10px 15px;
         
     }
 }
+
 </style>

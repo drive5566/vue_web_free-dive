@@ -5,6 +5,9 @@ import nprogress from 'nprogress'
 //start:進度條開始，done:進度條結束
 //引入進度條樣式
 import 'nprogress/nprogress.css'
+// 引入store
+import store from '@/store'
+
 
 
 // 1.利用axios對象的方法create，去創建一個axios實例
@@ -23,7 +26,10 @@ requests.interceptors.request.use((config)=>{
     // config:配置對象，對象裡有一個屬性很重要，header請求頭
     //進度條開始動
     nprogress.start()
-
+    if(store.state.detail.uuid_token){
+        // userTempId應跟後台人員溝通好是甚麼變數，在這假裝為userTempId
+        config.headers.userTempId = store.state.detail.uuid_token
+    }
     return config;
 });
 
@@ -31,8 +37,8 @@ requests.interceptors.request.use((config)=>{
 requests.interceptors.response.use((res)=>{
     //成功的回調函數:服務器相應數據回來後，響應攔截器可以檢測到，可以做一些事
     //進度條結束
-    nprogress.done()
 
+    nprogress.done()
     return res.data
 
 },(error)=>{

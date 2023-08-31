@@ -11,37 +11,71 @@
             <div class="cart-th6">操作</div>
         </div>
         <div class="cart-body">
-            <ul class="cart-list">
+            <ul class="cart-list" v-for="cart in carInfoList" :key="cart.id">
                 <li class="cart-list-con1">
-                    <input type="checkbox">
+                    <input type="checkbox" :checked="cart.isChecked == 1">
                 </li>
                 <li class="cart-list-con2">
-                    <img src="" alt="">
-                    <div class="item-msg">米加</div>
+                    <img :src="cart.imgUrl" alt="">
+                    <div class="item-msg">{{ cart.skuName }}</div>
                 </li>
                 <li class="cart-list-con4">
-                    <span class="srice">399</span>
+                    <span class="srice">{{ cart.skuPrice }}</span>
                 </li>
                 <li class="cart-list-con5">
-                    <a href="" class="mins">-</a>
-                    <input type="text" value="1" class="itxt">
-                    <a href="" class="plus">+</a>
+                    <a  class="mins" @click="handler('min',-1,cart)">-</a>
+                    <input type="text" :value="cart.skuNum" class="itxt" disabled>
+                    <a  class="plus"  @click="handler('add',1,cart)">+</a>
                 </li>
                 <li class="cart-list-con6">
-                    <span class="sum">399</span>
+                    <span class="sum">{{ cart.skuPrice * cart.skuNum }}</span>
                 </li>
                 <li class="cart-list-con7">
                     <a href="" class="sindelet">刪除</a>
                 </li>
             </ul>
+                <div class="money-box">
+                        <div class="sumprice">
+                            <em>總價: </em>
+                            <i class="summoney">{{totalPrice}}</i>
+                        </div>
+                        <div class="sumbtn">
+                            <a href="" class="sum-btn">結算</a>
+                        </div>
+                </div>
         </div>
     </div>
   </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
-name:'ShopCar'
+name:'ShopCar',
+mounted(){
+    this.getCartList()
+},
+methods:{
+    getCartList(){
+    this.$store.dispatch('getCartList')
+    },
+    handler(type,num,cart){
+        console.log(type,num,cart);
+    }
+},
+computed:{
+    ...mapGetters(['carList']),
+    carInfoList(){
+        return this.carList.cartInfoList || []
+    },
+    totalPrice(){
+        let sum = 0
+        this.carInfoList.forEach(item => {
+            sum+=item.skuNum * item.skuPrice
+        });
+        return sum
+    }
+}
 }
 </script>
 
@@ -54,16 +88,29 @@ name:'ShopCar'
 .cart-th{
     display: flex;
     justify-content: space-between;
+    margin: 10px 0;
+    background-color: rgb(230, 230, 230);
+    border: 1px solid hsl(0, 0%, 0%,.3);
+    padding: 5px;
 }
 
 .cart-list{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid hsl(0, 0%, 0%,.1);
+    margin-top: -1px;
+    padding: 5px;
 }
 
 .cart-list-con2{
     display: flex;
+    align-items: center;
+    width: 25%;
+    img{
+        width: 50px;
+
+    }
 }
 
 .cart-list-con5 {
@@ -77,6 +124,45 @@ name:'ShopCar'
     border: 1px solid;
     padding: 0 5px;
     padding-bottom: 2px;
+    cursor: pointer;
     }
+}
+
+.cart-th2{
+    width: 25%;
+}
+
+.cart-list-con4{
+    margin-left: 40px;
+    width: 2%;
+}
+
+.item-msg{
+    line-height: 18px;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.cart-list-con6{
+    width: 2%;
+}
+
+
+.money-box{
+    margin: 20px 0;
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+    align-items: center;
+    .summoney{
+        font-size: 22px;
+        color: red;
+    }
+}
+
+.sum-btn{
+    color: #fff;
+    background-color: red;
+    padding:10px 20px;
 }
 </style>
