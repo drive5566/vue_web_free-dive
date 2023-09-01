@@ -259,6 +259,7 @@ input{
     border-style: none;
     padding: 0 30px;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .preview-wrap{

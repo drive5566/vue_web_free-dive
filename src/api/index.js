@@ -17,3 +17,8 @@ export const reqAddOrUpDateShopCar = (skuId,skuNum)=>requests({url:`/cart/addToC
 
 // 購物車列表數據
 export const reqCartList = ()=>requests({url:'/cart/cartList',method:'get'})
+
+// 刪除購物車
+export const reqdeleteCarList = (skuId)=>requests({url:`/cart/deleteCart/${skuId}`,method:'delete'})
+// 修改商品勾選狀態
+export const reqchecked = (skuId,ischecked)=>requests({url:`/cart/checkCart/${skuId}/${ischecked}`,method:'get'})
