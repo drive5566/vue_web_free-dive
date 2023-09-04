@@ -22,3 +22,7 @@ export const reqCartList = ()=>requests({url:'/cart/cartList',method:'get'})
 export const reqdeleteCarList = (skuId)=>requests({url:`/cart/deleteCart/${skuId}`,method:'delete'})
 // 修改商品勾選狀態
 export const reqchecked = (skuId,ischecked)=>requests({url:`/cart/checkCart/${skuId}/${ischecked}`,method:'get'})
+// 取得驗證碼
+export const reqCode = (phone)=>requests({url:`user/passport/sendCode/${phone}`,method:'get'})
+// 比對註冊
+export const reqUserRegister = (data)=>requests({url:'user/passport/register',data,method:'post'})

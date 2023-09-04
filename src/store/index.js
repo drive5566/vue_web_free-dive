@@ -6,6 +6,7 @@ import home from './home'
 import search from './search'
 import detail from './detail'
 import shopcar from './shopcar'
+import user from './user'
 
 //對外爆露store的實例
 export default new vuex.Store({
@@ -14,6 +15,7 @@ export default new vuex.Store({
         home,
         search,
         detail,
-        shopcar
+        shopcar,
+        user
     }
 })
