@@ -17,7 +17,7 @@
         </div>
         <div class="content">
           <label for="">登錄密碼</label>
-          <input type="password" placeholder="請輸入密碼" v-model="passWord">
+          <input type="password" placeholder="請輸入密碼" v-model="password">
           <span class="error-msg">錯誤提示訊息</span>
         </div>
         <div class="content">
@@ -46,7 +46,7 @@
     return {
       phone:'',
       code:'',
-      passWord:'',
+      password:'',
       checkPassWord:'',
       agree:true
     }
@@ -68,11 +68,11 @@
   async userRegister(){
 
     try {
-      const {phone,code,passWord,checkPassWord} = this;
-      (phone && code && passWord == checkPassWord) && await this.$store.dispatch('userRegister',{phone,code,passWord})
+      const {phone,code,password,checkPassWord} = this;
+      (phone && code && password == checkPassWord) && await this.$store.dispatch('userRegister',{phone,code,password})
         this.$router.push('/login')
     } catch (error) {
-      alert('失敗')
+      alert('失敗或手機已被註冊')
     }
   }
   }

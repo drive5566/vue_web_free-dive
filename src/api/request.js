@@ -30,6 +30,9 @@ requests.interceptors.request.use((config)=>{
         // userTempId應跟後台人員溝通好是甚麼變數，在這假裝為userTempId
         config.headers.userTempId = store.state.detail.uuid_token
     }
+    if(store.state.user.token){
+        config.headers.token = store.state.user.token
+    }
     return config;
 });
 

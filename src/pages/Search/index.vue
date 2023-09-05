@@ -296,6 +296,7 @@ export default {
   width: 19%;
   margin-top: 30px;
   padding: 10px;
+
 }
 
 .p-img img {
@@ -313,12 +314,15 @@ export default {
 
 .attr {
   margin-bottom: 20px;
+  padding-bottom: auto;
+  height: 40px;
 }
 .attr a {
   font-size: 12px;
   display: block;
   line-height: 16px;
   word-break: break-all;
+
 }
 
 .command {
@@ -358,6 +362,13 @@ span {
   color: #fff;
   line-height: 47px;
 }
+
+.list-wrap{
+  display: flex;
+  flex-direction: column;
+}
+
+
 </style>
   
   

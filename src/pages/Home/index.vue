@@ -28,7 +28,10 @@ components:{
 },
 mounted(){
   //派發action獲取floor數組
-  this.$store.dispatch('getFloorList')
+  this.$store.dispatch('getFloorList'),
+
+  this.$store.dispatch('userInfo')
+
 },
 computed:{
   ...mapState({

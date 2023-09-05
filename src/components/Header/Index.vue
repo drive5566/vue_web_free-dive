@@ -6,9 +6,13 @@
                 <div class="fl">
                     <ul>
                         <li>商城歡迎你!&nbsp;&nbsp;</li>
-                        <li>
+                        <li v-show="!userName">
                             <router-link to="/Login">請登入</router-link>&nbsp;
                             <router-link to="/Register">免費註冊</router-link>
+                        </li>
+                        <li v-show="userName">
+                            <a >{{ userName }}</a>
+                            <a class="register"> 登出</a>
                         </li>
                     </ul>
                 </div>
@@ -130,6 +134,11 @@ export default {
             //     params:{keyWord:this.keyWord},
             //     query:{k:this.keyWord.toUpperCase()}                
             // },()=>{},()=>{})
+        }
+    },
+    computed:{
+        userName(){
+            return this.$store.state.user.user.name
         }
     },
     mounted(){
@@ -310,7 +319,9 @@ nav{
     border-bottom: 2px solid red;
 } 
 
-
+.register{
+    cursor: pointer;
+}
 
 
 </style>

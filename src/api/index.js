@@ -26,3 +26,7 @@ export const reqchecked = (skuId,ischecked)=>requests({url:`/cart/checkCart/${sk
 export const reqCode = (phone)=>requests({url:`user/passport/sendCode/${phone}`,method:'get'})
 // 比對註冊
 export const reqUserRegister = (data)=>requests({url:'user/passport/register',data,method:'post'})
+// 登入
+export const reqLogin = (data)=>requests({url:'user/passport/login',data,method:'post'})
+//獲取用戶訊息
+export const reqUserInfo = ()=>requests({url:'user/passport/auth/getUserInfo',method:'get'})
