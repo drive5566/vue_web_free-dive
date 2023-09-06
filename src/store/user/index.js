@@ -1,10 +1,10 @@
 import {reqCode} from '@/api'
-import {reqUserRegister,reqLogin,reqUserInfo} from '@/api'
+import {reqUserRegister,reqLogin,reqUserInfo,reqLogout} from '@/api'
 
 
 const state = {
     code:'',
-    token:'',
+    token:localStorage.getItem('TOKEN'),
     user:{}
 }
 const actions = {
@@ -33,6 +33,7 @@ const actions = {
      console.log(commit);
      if(result.code == 200){
         commit('USERLOGIN',result.data.token)
+        localStorage.setItem('TOKEN',result.data.token)
         return 'ok'
         
      }else{
@@ -47,6 +48,14 @@ const actions = {
         commit('USERINFO',result.data)
         return 'ok'
        }
+    },
+
+    async userLogout({commit}){
+        let result = await reqLogout()
+        if(result.code == 200){
+        commit('USERLOGOUT')
+
+        }
     }
 }
 const mutations = {
@@ -58,6 +67,11 @@ const mutations = {
     },
     USERINFO(state,user){
         state.user = user
+    },
+    USERLOGOUT(state){
+        state.token = ''
+        state.user = {}
+        localStorage.removeItem('TOKEN')
     }
 }
 const getters = {

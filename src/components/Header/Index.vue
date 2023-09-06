@@ -12,7 +12,7 @@
                         </li>
                         <li v-show="userName">
                             <a >{{ userName }}</a>
-                            <a class="register"> 登出</a>
+                            <a class="register" @click="logout"> 登出</a>
                         </li>
                     </ul>
                 </div>
@@ -134,6 +134,15 @@ export default {
             //     params:{keyWord:this.keyWord},
             //     query:{k:this.keyWord.toUpperCase()}                
             // },()=>{},()=>{})
+        },
+        async logout(){
+            // 發請求、清除數據token
+           try {
+            await this.$store.dispatch('userLogout');       
+            this.$router.push('/Home')
+           } catch (error) {
+            alert(error)
+           }
         }
     },
     computed:{
@@ -144,7 +153,10 @@ export default {
     mounted(){
         this.$bus.$on('clear',()=>{
             this.keyWord = ''
-        })
+        }),
+
+        this.$store.dispatch('userInfo')
+
     }
 
 }
