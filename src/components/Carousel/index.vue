@@ -2,11 +2,8 @@
   <div class="swiper-container" ref="mySwiper">
     <div class="swiper-wrapper">
       <div
-        class="swiper-slide"
-        v-for="carousel in list"
-        :key="carousel.id"
-      >
-        <img :src="carousel.imgUrl" alt="" />
+        class="swiper-slide">
+        <img src="../../pages/About/img/11247478.jpeg" alt="" />
       </div>
     </div>
     <!-- 分頁器 -->

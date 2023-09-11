@@ -9,8 +9,14 @@ import Detail from '@/pages/Detail'
 import AddCarSuccess from '@/pages/AddCarSuccess'
 import ShopCar from '@/pages/ShopCar'
 import About from '@/pages/About'
+import DiveSite from '@/pages/DiveSite'
 //路由配置訊息
 export default[
+        {
+            path:'/DiveSite',
+            component:DiveSite,
+            meta:{show:true},
+        },
         {
             path:'/About',
             component:About,

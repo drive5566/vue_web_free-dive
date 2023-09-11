@@ -14,7 +14,7 @@
                     <ul>
                         <li><router-link to="/About">自由潛水</router-link> </li>
                         <li></li>
-                        <li ><a href="#">北部潛點</a> </li>
+                        <li ><router-link to="/DiveSite">北部潛點</router-link> </li>
                         <li></li>
                         <li><a href="#">海像觀測</a> </li>
                         <li></li>
@@ -81,7 +81,7 @@ export default {
 
 /* 快捷導航模塊 */
 .shortcut{
-    height: 31px;
+
     line-height: 31px;
     margin: 20px 0;
 }
