@@ -8,8 +8,14 @@ import Search from '@/pages/Search'
 import Detail from '@/pages/Detail'
 import AddCarSuccess from '@/pages/AddCarSuccess'
 import ShopCar from '@/pages/ShopCar'
+import About from '@/pages/About'
 //路由配置訊息
 export default[
+        {
+            path:'/About',
+            component:About,
+            meta:{show:true},
+        },
         {
             path:'/ShopCar',
             component:ShopCar,

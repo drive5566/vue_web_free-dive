@@ -5,46 +5,19 @@
 
             <div class="mod_help">
                 <dl>
-                    <dt>購物指南</dt>
-                    <dd><a href="#">購物流程</a> </dd>
-                    <dd><a href="#">會員介紹</a> </dd>
-                    <dd><a href="#">生活旅行</a> </dd>
-                    <dd><a href="#">常見問題</a> </dd>
-                    <dd><a href="#">購物指南</a> </dd>
+                    <dt>好站連結</dt>
+                    <dd><a href="https://www.windy.com/?24.939,121.542,5">天氣預報</a> </dd>
+                    <dd><a href="https://www.cwb.gov.tw/V8/C/">氣象局</a> </dd>
                 </dl>
                 <dl>
-                    <dt>配送方式</dt>
-                    <dd><a href="#">上門自提</a> </dd>
-                    <dd><a href="#">限時抵達</a> </dd>
-                    <dd><a href="#">配送查詢</a> </dd>
-                    <dd><a href="#">配送收費</a> </dd>
-                    <dd><a href="#">海外配送</a> </dd>
+                    <dt>潛水系統</dt>
+                    <dd><a href="https://www.aidainternational.org/">AIDA</a> </dd>
+                    <dd><a href="https://www.padi.com/zh-hant">PADI</a> </dd>
+                    <dd><a href="https://www.divessi.com/tw/home">SSI</a> </dd>
                 </dl>
+
                 <dl>
-                    <dt>支付方式</dt>
-                    <dd><a href="#">或到付款</a> </dd>
-                    <dd><a href="#">在限支付</a> </dd>
-                    <dd><a href="#">分期付款</a> </dd>
-                    <dd><a href="#">郵局匯款</a> </dd>
-                    <dd><a href="#">公司轉帳</a> </dd>
-                </dl>
-                <dl>
-                    <dt>售後服務</dt>
-                    <dd><a href="#">售後政策</a> </dd>
-                    <dd><a href="#">價格保護</a> </dd>
-                    <dd><a href="#">退款說明</a> </dd>
-                    <dd><a href="#">退換貨</a> </dd>
-                    <dd><a href="#">取消訂單</a> </dd>
-                </dl>
-                <dl>
-                    <dt>特色服務</dt>
-                    <dd><a href="#">奪寶島</a> </dd>
-                    <dd><a href="#">DIY裝機</a> </dd>
-                    <dd><a href="#">延保服務</a> </dd>
-                    <dd><a href="#">會員卡</a> </dd>
-                </dl>
-                <dl>
-                    <dt>幫助中心</dt>
+                    <dt>幫助</dt>
                     <dd><img src="./img/qrcode_69196010_b8dade90e8743cf20b8b09df24debd11.png" alt=""></dd>
 
                 </dl>
@@ -53,7 +26,7 @@
             <div class="mod_copyright">
                 <div class="links"></div>
                 <div class="copyright">
-                    網站股份有限公司提供 註冊編號：交觀綜9999號 旅遊專線電話：0800-000-123 地址：台北市區街9號7樓
+                    網站股份有限公司提供 註冊編號：交觀綜9999號 旅遊專線電話：0800-000-123 地址：基隆海底路
                 </div>
             </div>
         </footer>
@@ -66,18 +39,17 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+
 .footer{
     max-width: 100%;
-
-    background-color: rgb(202, 202, 202);
     padding:50px 0px;
     
 }
 
 .mod_service{
     height: 80px;
-    border-bottom: 1px solid #ccc;
 }
 .mod_service ul{
     display: flex;
@@ -95,7 +67,6 @@ export default {
     float: left;
     width: 50px;
     height: 50px;
-    /* background: url(../img/2019121918295413.png) -50px; */
     margin-right: 8px;
     border-radius: 25px;
 }
@@ -119,11 +90,11 @@ export default {
 
 .mod_help{
     height: 185px;
-    border: 1px solid;
+    border-top: 1px solid hsl(0, 0%, 0%,.2);
     padding-top: 20px;
     padding-left: 50px;
     display: flex;
-    /* float: left; */
+    justify-content: center;
 }
 .mod_help dl dt{
     font-size: 16px;
