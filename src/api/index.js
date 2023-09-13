@@ -30,5 +30,5 @@ export const reqUserRegister = (data)=>requests({url:'user/passport/register',da
 export const reqLogin = (data)=>requests({url:'user/passport/login',data,method:'post'})
 //獲取用戶訊息
 export const reqUserInfo = ()=>requests({url:'user/passport/auth/getUserInfo',method:'get'})
-// 登出
+// // 登出
 export const reqLogout = ()=>requests({url:'user/passport/logout',method:'get'})

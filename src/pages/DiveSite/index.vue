@@ -24,6 +24,7 @@
             </router-link>
         </div>
         <router-view></router-view>
+        <Footer/>
 
 
     </div>
@@ -31,13 +32,11 @@
 </template>
 
 <script>
+import Footer from '@/components/Footer/Index'
+
 export default {
 name:'DiveSite',
-data() {
-    return {
-       
-    }
-},
+components:{Footer}
 
 }
 </script>

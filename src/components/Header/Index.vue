@@ -16,7 +16,7 @@
                         <li></li>
                         <li ><router-link to="/DiveSite">北部潛點</router-link> </li>
                         <li></li>
-                        <li><a href="#">海像觀測</a> </li>
+                        <li><router-link to="/Weather">海像觀測</router-link> </li>
                         <li></li>
                         <li><a href="#">離島風景</a> </li>
 

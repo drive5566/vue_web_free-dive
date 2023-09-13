@@ -9,7 +9,7 @@
                 外木山適合潛水的時間落在5月至6月夏季，但因該海域夏天水母較多，建議穿著適當裝備，保障自身安全。<br>
                 </p>
                 <p class="star">
-                難易度:<span class="material-symbols-outlined">star</span>
+                難易度:<span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
                 </p> 
 
 
@@ -25,13 +25,16 @@
                 <li><img src="../img/Waimushan/原方案25M_珊瑚-scaled.jpg" alt=""></li>
             </ul>
         </div>
+
+        <h3 class="subtitle">必看明星</h3>
+
         <div class="feature introduce">
             <div class="img">
                 <img src="../img/Waimushan/2023-04-06-14-38-09.png" alt="">
             </div>
             <div class="text">
                 <h3>沈船</h3>
-                <p>容易親近的沉船，湖海路2.4-2.5k處踢出去20-25米左右，會看到深黃色船艙隔間跟巨大輪軸出現在眼前，深度約5-7米，適合有開放水域經驗的自潛員探訪。</p>
+                <p class="content">容易親近的沉船，湖海路2.4-2.5k處踢出去20-25米左右，會看到深黃色船艙隔間跟巨大輪軸出現在眼前，深度約5-7米，適合有開放水域經驗的自潛員探訪。</p>
             </div>
         </div>
     </div>
@@ -56,13 +59,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
     .text{
         width: 40%;
 
         h3{
             font-size: 28px;
             font-weight: 900;
+            margin-bottom: 20px;
         }
         p{
             line-height: 22px;
@@ -90,9 +94,34 @@
     }
     .img{
         width: 60%;
+        height: 300px;
         img{
             width: 100%;
+            height: 100%;
         }
     }
+  }
+
+  .bar{
+    margin: 50px 0;
+    ul{
+        display: flex;
+        gap: 10px;
+        li{
+            width: 300px;
+            height: 220px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+  }
+
+  .subtitle{
+    font-size: 38px;
+    margin-bottom: 30px;
+    font-weight: 900;
+    color: rgb(121, 121, 252);
   }
   </style>
