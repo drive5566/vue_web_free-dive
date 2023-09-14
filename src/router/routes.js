@@ -51,7 +51,7 @@ export default[
         },
         {
             path:'/',
-            redirect:'/Home'
+            redirect:'/About'
         }
     
 ]
