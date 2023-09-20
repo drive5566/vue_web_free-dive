@@ -1,13 +1,11 @@
 import Vue from 'vue'
 import App from './App.vue'
 //三級聯動組件，註冊全局組件
-import TypeNav from '@/components/typenav'
-import Carousel from '@/components/Carousel'
-import Pagination from '@/components/Pagination'
+
+
 //第一個參數:全局組件名字，第二個參數:哪一個組件
-Vue.component(TypeNav.name,TypeNav)
-Vue.component(Carousel.name,Carousel)
-Vue.component(Pagination.name,Pagination)
+
+
 
 Vue.config.productionTip = false
 //引入路由
@@ -18,8 +16,7 @@ import store from '@/store'
 import '@/mock/mockServe'
 //引入swiper樣式
 import 'swiper/css/swiper.css'
-import {reqGetSearchInfo} from '@/api'
-console.log(reqGetSearchInfo({}));
+
 new Vue({
   render: h => h(App),
   // 全局事件總線

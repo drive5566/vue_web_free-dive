@@ -10,6 +10,7 @@ import Nose from '@/pages/DiveSite/Nose'
 import Bat from '@/pages/DiveSite/Bat'
 import Fulian from '@/pages/DiveSite/Fulian'
 import Weather from '@/pages/Weather'
+import Outlying from '@/pages/Outlying'
 //路由配置訊息
 export default[
         {
@@ -47,6 +48,11 @@ export default[
         {
             path:'/Weather',
             component:Weather,
+            meta:{show:true},
+        },
+        {
+            path:'/Outlying',
+            component:Outlying,
             meta:{show:true},
         },
         {

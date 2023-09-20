@@ -4,9 +4,9 @@
         <div class="shortcut">
             <div class="logo">
                         <h1>潛水
-                            <a href="#">
+                            <router-link to="/About">
                                 <img src="./img/MvzVuF6k0Vf3tr3-一套潜水设备水彩手绘插图。概念标签，磁铁，名片和横幅，传单和小册子。用于打印，贴纸，明信片.jpg" alt="首頁">
-                            </a>
+                            </router-link>
                         </h1>
                     </div>
                 <div class="fr">
@@ -18,7 +18,7 @@
                         <li></li>
                         <li><router-link to="/Weather">海像觀測</router-link> </li>
                         <li></li>
-                        <li><a href="#">離島風景</a> </li>
+                        <li><router-link to="/Outlying">離島風景</router-link> </li>
 
                     </ul>
                 </div>

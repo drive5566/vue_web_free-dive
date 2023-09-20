@@ -6,14 +6,14 @@
             <div class="mod_help">
                 <dl>
                     <dt>好站連結</dt>
-                    <dd><a href="https://www.windy.com/?24.939,121.542,5">天氣預報</a> </dd>
-                    <dd><a href="https://www.cwb.gov.tw/V8/C/">氣象局</a> </dd>
+                    <dd><a href="https://www.windy.com/?24.939,121.542,5" target="_blank">天氣預報</a> </dd>
+                    <dd><a href="https://www.cwb.gov.tw/V8/C/" target="_blank">氣象局</a> </dd>
                 </dl>
                 <dl>
                     <dt>潛水系統</dt>
-                    <dd><a href="https://www.aidainternational.org/">AIDA</a> </dd>
-                    <dd><a href="https://www.padi.com/zh-hant">PADI</a> </dd>
-                    <dd><a href="https://www.divessi.com/tw/home">SSI</a> </dd>
+                    <dd><a href="https://www.aidainternational.org/" target="_blank">AIDA</a> </dd>
+                    <dd><a href="https://www.padi.com/zh-hant" target="_blank">PADI</a> </dd>
+                    <dd><a href="https://www.divessi.com/tw/home" target="_blank">SSI</a> </dd>
                 </dl>
 
                 <dl>

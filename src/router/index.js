@@ -1,7 +1,7 @@
 //配置路由的地方
 import Vue from "vue";
 import VueRouter from "vue-router";
-import store from '@/store'
+
 
 //使用插件
 Vue.use(VueRouter)
@@ -31,8 +31,5 @@ let router = new VueRouter({
         return {y:0}
     }
 })
-router.beforeEach((to,from,next)=>{
-next()
-console.log(store);
-})
+
 export default router
