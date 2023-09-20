@@ -1,7 +1,7 @@
 <template>
     <div class="container">
             <div class="title">
-            <h3>基隆海面</h3>
+            <h3>海面</h3>
         </div>
         <div class="weather-data">
             <ul class="date">
@@ -58,6 +58,7 @@
             </h3>
         </div>
         
+        <p>資料來源:中央氣象局</p>
 
     </div>
 </template>
@@ -80,24 +81,12 @@ export default {
         this.getTime(),
         await axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-B0075-001?Authorization=CWB-C3C5CC0C-4772-40C5-8FC3-2E23656ACF12&StationID=OAC004&WeatherElement=WaveHeight,WaveDirectionDescription,PrimaryAnemometer&DataTime=${this.RealTime}`)
             .then((response) => {
-                // let WaveHeight = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[20].WeatherElements.WaveHeight
-
-                // let DataTime = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[20].DateTime
-
-                // let WaveDirectionDescription = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[20].WeatherElements.WaveDirectionDescription
-
-                // let WindSpeed = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[20].WeatherElements.PrimaryAnemometer.WindSpeed
-
-                // let WindDirectionDescription = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[20].WeatherElements.PrimaryAnemometer.WindDirectionDescription
-
-                // this.WaveHeight = WaveHeight
-                // this.DataTime = DataTime.split('T')[0]
-                // this.WaveDirectionDescription = WaveDirectionDescription
-                // this.WindSpeed = WindSpeed.split('.')[0]
-                // this.WindDirectionDescription = WindDirectionDescription
-
-                console.log(response)
-                // console.log(DataTime)
+                let data = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[0].WeatherElements
+                this.WaveHeight = data.WaveHeight
+                this.WaveDirectionDescription = data.WaveDirectionDescription
+                this.WindSpeed = data.PrimaryAnemometer.WindSpeed
+                this.WindDirectionDescription = data.PrimaryAnemometer.WindDirectionDescription
+                this.DataTime = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[0].DateTime.split('T')[0]
 
             })
 
@@ -143,6 +132,7 @@ export default {
                 return '感知天氣中，請稍後'
             }
         },
+
         
     },
     methods:{
@@ -158,7 +148,7 @@ export default {
     const day = String(currentDate.getDate()).padStart(2, '0');
 
     // 获取当前小时（24小时制）
-    const hours = String(currentDate.getHours()).padStart(2, '0');
+    const hours = String(currentDate.getHours()-1).padStart(2, '0');
 
     // 获取当前分钟
     const minutes = '00';
@@ -213,6 +203,10 @@ export default {
             color: rgb(49, 110, 251);
         }
     }
+}
+p{
+    margin-top: 30px;
+    font-size: 12px;
 }
 </style>
 
