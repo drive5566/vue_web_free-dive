@@ -19,6 +19,8 @@
                         <li><router-link to="/Weather">海像觀測</router-link> </li>
                         <li></li>
                         <li><router-link to="/Outlying">離島風景</router-link> </li>
+                        <li></li>
+                        <li><router-link to="/Message">留言板</router-link> </li>
 
                     </ul>
                 </div>

@@ -11,6 +11,7 @@ import Bat from '@/pages/DiveSite/Bat'
 import Fulian from '@/pages/DiveSite/Fulian'
 import Weather from '@/pages/Weather'
 import Outlying from '@/pages/Outlying'
+import Message from '@/pages/Message'
 //路由配置訊息
 export default[
         {
@@ -53,6 +54,11 @@ export default[
         {
             path:'/Outlying',
             component:Outlying,
+            meta:{show:true},
+        },        
+        {
+            path:'/Message',
+            component:Message,
             meta:{show:true},
         },
         {
