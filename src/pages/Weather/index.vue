@@ -87,7 +87,7 @@ export default {
                 this.WindSpeed = data.PrimaryAnemometer.WindSpeed
                 this.WindDirectionDescription = data.PrimaryAnemometer.WindDirectionDescription
                 this.DataTime = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[0].DateTime.split('T')[0]
-
+console.log(response);
             })
 
 
@@ -176,7 +176,8 @@ export default {
 
     .title{
         font-weight: 900;
-        font-size: 26px;
+        font-size: 30px;
+        margin: 30px 0;
     }
     ul {
         display: flex;

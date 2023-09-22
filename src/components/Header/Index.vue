@@ -21,6 +21,8 @@
                         <li><router-link to="/Outlying">離島風景</router-link> </li>
                         <li></li>
                         <li><router-link to="/Message">留言板</router-link> </li>
+                        <li></li>
+                        <li><router-link to="/Shop">各類商品</router-link> </li>
 
                     </ul>
                 </div>

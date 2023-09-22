@@ -12,6 +12,7 @@ import Fulian from '@/pages/DiveSite/Fulian'
 import Weather from '@/pages/Weather'
 import Outlying from '@/pages/Outlying'
 import Message from '@/pages/Message'
+import Shop from '@/pages/Shop'
 //路由配置訊息
 export default[
         {
@@ -59,6 +60,11 @@ export default[
         {
             path:'/Message',
             component:Message,
+            meta:{show:true},
+        },
+        {
+            path:'/Shop',
+            component:Shop,
             meta:{show:true},
         },
         {

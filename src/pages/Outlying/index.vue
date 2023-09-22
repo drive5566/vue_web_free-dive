@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="w">
     <div class="title">
       <h3>小琉球</h3>
+      <p>小琉球擁有台灣全境最高的年平均海溫，海溫終年都維持在攝氏25度以上，因此為台灣冬季最適合從事浮潛等海上活動的地點之一，也因其溫暖的海水而孕育上千種以上不同的珊瑚礁。小琉球為屏東縣政府公告之綠蠵龜重要棲息地，曾空拍觀察到805隻海龜。</p>
     </div>
     <div class="swiper-container" ref="mySwiper1">
       <div class="swiper-wrapper">
@@ -31,6 +32,7 @@
     <hr>
     <div class="title">
       <h3>綠島</h3>
+      <p>綠島是輝石安山岩所形成之火山島，為台灣第四大附屬島嶼。在台灣戒嚴時期曾經是關押政治犯的著名監獄，如今則是以觀光產業聞名。</p>
     </div>
     <div class="swiper-container" ref="mySwiper2">
       <div class="swiper-wrapper">
@@ -52,6 +54,7 @@
     <hr>
     <div class="title">
       <h3>蘭嶼</h3>
+      <p>蘭嶼，四面環海，因其島上獨有的達悟族地土風俗與自然景點，遠近馳名。「蘭嶼聚落與自然景觀」為文化部遴選之臺灣世界遺產潛力點之一。</p>
     </div>
     <div class="swiper-container" ref="mySwiper3">
       <div class="swiper-wrapper">
@@ -134,6 +137,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.w{
+  width: 900px;
+  margin: 0 auto;
+}
 .swiper-container {
   width: 600px;
   height: 400px;
@@ -158,6 +165,12 @@ img {
   text-align: center;
   font-size: 34px;
   font-weight: 900;
+  p{
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+  line-height: 20px;
+  }
 }
 
 hr{

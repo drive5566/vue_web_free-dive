@@ -53,6 +53,7 @@ data() {
     h2{
         font-size: 30px;
         margin: 30px 0;
+        font-weight: 900;
     }
     input{
         border: 1px solid;
