@@ -79,7 +79,7 @@ export default {
     },
     async mounted() {
         this.getTime(),
-        await axios.get(`https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-B0075-001?Authorization=CWB-C3C5CC0C-4772-40C5-8FC3-2E23656ACF12&StationID=OAC004&WeatherElement=WaveHeight,WaveDirectionDescription,PrimaryAnemometer&DataTime=${this.RealTime}`)
+        await axios.get(`https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-B0075-001?Authorization=CWA-76104C75-092E-4A57-977B-E26C7CB2E181&StationID=46694A&WeatherElement=WaveHeight,WaveDirectionDescription,PrimaryAnemometer&DataTime=${this.RealTime}`)
             .then((response) => {
                 let data = response.data.Records.SeaSurfaceObs.Location[0].StationObsTimes.StationObsTime[0].WeatherElements
                 this.WaveHeight = data.WaveHeight
@@ -122,11 +122,11 @@ console.log(response);
     },
     computed:{
         WeatherStatu(){
-            if(this.WaveHeight<=0.5 && this.WindSpeed<=5){
+            if(this.WaveHeight<=0.5 || this.WindSpeed<=5){
                 return '風平浪靜，趕緊帶上裝備出門潛水!!'
-            }else if(0.5 <= this.WaveHeight && this.WaveHeight <= 1 && 5 <= this.WindSpeed && this.WindSpeed <= 10){
+            }else if(0.5 <= this.WaveHeight || this.WaveHeight <= 1 && 5 <= this.WindSpeed || this.WindSpeed <= 10){
                 return '小風小浪，下水要隨時注意安全喔!!'
-            }else if(this.WaveHeight>1 && this.WindSpeed>10){
+            }else if(this.WaveHeight>1 || this.WindSpeed>10){
                 return '不適合下水，乖乖在家休息!!'
             }else{
                 return '感知天氣中，請稍後'
